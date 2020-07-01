@@ -7,4 +7,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'star-wars-duel';
+
+  links = ['Home', 'Fight with characters', 'Fight with ships'];
+  activeLink = this.links[0];
 }
