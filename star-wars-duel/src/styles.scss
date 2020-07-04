@@ -1,1 +1,6 @@
-/* You can add global styles to this file, and also import other style files */
+.body__background-image{
+  background-image: url("assets/images/stars_background.jpg");
+}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
