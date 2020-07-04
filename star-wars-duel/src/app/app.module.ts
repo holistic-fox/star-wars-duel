@@ -4,6 +4,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatTabsModule } from '@angular/material/tabs';
 
 import { StoreModule } from '@ngrx/store';
+import { EffectsModule } from '@ngrx/effects';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -11,7 +12,6 @@ import { AppComponent } from './app.component';
 
 import { HomePageModule } from './features/home-page/home-page.module';
 import { StarWarsDataModule } from './features/star-wars-data/star-wars-data.module';
-
 
 
 @NgModule({
@@ -26,6 +26,7 @@ import { StarWarsDataModule } from './features/star-wars-data/star-wars-data.mod
     HomePageModule,
     StarWarsDataModule,
     StoreModule.forRoot({}),
+    EffectsModule.forRoot([]),
     StoreDevtoolsModule.instrument({})
   ],
   providers: [],
