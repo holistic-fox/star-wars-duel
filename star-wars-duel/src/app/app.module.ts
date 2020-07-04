@@ -6,6 +6,8 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatTabsModule } from '@angular/material/tabs';
 
+import { HomePageModule } from './features/home-page/home-page.module';
+
 @NgModule({
   declarations: [
     AppComponent
@@ -14,7 +16,8 @@ import { MatTabsModule } from '@angular/material/tabs';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MatTabsModule
+    MatTabsModule,
+    HomePageModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
