@@ -11,8 +11,8 @@ export class AppComponent implements OnInit {
   links = [
     {path: 'home', title: 'Home'},
     {path: 'characters', title: 'Fight with characters'},
-    {path: 'starships', title: 'Fight with ships'}];
-  activeLink = this.links[0];
+    {path: 'starships', title: 'Fight with ships'}
+  ];
 
   constructor(private starWarsDataService: StarWarsDataService) {
   }
