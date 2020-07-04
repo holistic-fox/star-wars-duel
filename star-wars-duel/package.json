@@ -24,6 +24,7 @@
     "@ngrx/router-store": "^9.2.0",
     "@ngrx/store": "^9.2.0",
     "@ngrx/store-devtools": "^9.2.0",
+    "ng2-swapi": "^1.0.0-rc.11",
     "rxjs": "~6.5.5",
     "tslib": "^2.0.0",
     "zone.js": "~0.10.3"
