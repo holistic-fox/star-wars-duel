@@ -11,12 +11,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 import { HomePageModule } from './features/home-page/home-page.module';
+import { PeopleDuelPageModule } from './features/people-duel-page/people-duel-page.module';
+import { StarshipsDuelPageModule } from './features/starships-duel-page/starships-duel-page.module';
 import { StarWarsDataModule } from './features/star-wars-data/star-wars-data.module';
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
   ],
   imports: [
     BrowserModule,
@@ -25,6 +27,8 @@ import { StarWarsDataModule } from './features/star-wars-data/star-wars-data.mod
     MatTabsModule,
     HomePageModule,
     StarWarsDataModule,
+    StarshipsDuelPageModule,
+    PeopleDuelPageModule,
     StoreModule.forRoot({}),
     EffectsModule.forRoot([]),
     StoreDevtoolsModule.instrument({})

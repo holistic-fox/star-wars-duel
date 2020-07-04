@@ -1,1 +1,33 @@
-<p>home-page works!</p>
+<div class="home-page--container">
+
+  <div class="home-page--container--item">
+    <mat-card [routerLink]="'/characters'" class="home-page--card">
+        <mat-card-header>
+          <div class="example-header-image"></div>
+          <mat-card-title>Fight with characters</mat-card-title>
+        </mat-card-header>
+        <img mat-card-image src="assets/images/duel_people.png">
+        <mat-card-content>
+          <p>
+            In this mode you can select random characters and see who would win the duel.
+          </p>
+        </mat-card-content>
+      </mat-card>
+  </div>
+
+  <div [routerLink]="'/starships'" class="home-page--container--item">
+    <mat-card class="home-page--card">
+      <mat-card-header>
+        <div class="example-header-image"></div>
+        <mat-card-title>Fight with Starships</mat-card-title>
+      </mat-card-header>
+      <img mat-card-image src="assets/images/duel_starships.png">
+      <mat-card-content>
+        <p>
+          In this mode you can select random starships and see who would win the duel.
+        </p>
+      </mat-card-content>
+    </mat-card>
+  </div>
+
+</div>
