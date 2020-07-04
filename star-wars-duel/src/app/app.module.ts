@@ -1,12 +1,17 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatTabsModule } from '@angular/material/tabs';
 
+import { StoreModule } from '@ngrx/store';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+
+import { AppRoutingModule } from './app-routing.module';
+import { AppComponent } from './app.component';
+
 import { HomePageModule } from './features/home-page/home-page.module';
+
+
 
 @NgModule({
   declarations: [
@@ -18,6 +23,8 @@ import { HomePageModule } from './features/home-page/home-page.module';
     BrowserAnimationsModule,
     MatTabsModule,
     HomePageModule,
+    StoreModule.forRoot({}),
+    StoreDevtoolsModule.instrument({})
   ],
   providers: [],
   bootstrap: [AppComponent]
