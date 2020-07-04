@@ -1,12 +1,8 @@
+import { Duel } from '../models/duel';
+
 export interface GameplayInterface {
-  peopleDuel: {
-    playerOnePick: number;
-    playerTwoPick: number;
-  };
-  starshipsDuel: {
-    playerOnePick: number;
-    playerTwoPick: number;
-  };
+  peopleDuel: Duel;
+  starshipsDuel: Duel;
   history: [];
 }
 
@@ -14,10 +10,12 @@ export const initialState: GameplayInterface = {
   peopleDuel: {
     playerOnePick: null,
     playerTwoPick: null,
+    winner: null,
   },
   starshipsDuel: {
     playerOnePick: null,
     playerTwoPick: null,
+    winner: null,
   },
   history: [],
 }
