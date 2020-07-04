@@ -1,7 +1,12 @@
+import { Person } from '../models/person';
+import { Starship } from '../models/starship';
+
 export interface StarWarsDataInterface {
-  ships: any;
+  people: Person[];
+  ships: Starship[];
 }
 
 export const initialState: StarWarsDataInterface = {
-  ships: null,
+  people: [],
+  ships: [],
 }
