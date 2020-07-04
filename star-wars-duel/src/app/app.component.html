@@ -1,7 +1,8 @@
 <nav mat-tab-nav-bar>
   <a mat-tab-link *ngFor="let link of links"
      (click)="activeLink = link"
-     [active]="activeLink == link"> {{link}} </a>
+     [routerLink]="link.path"
+     [active]="activeLink == link"> {{link.title}} </a>
 </nav>
 
 <router-outlet></router-outlet>

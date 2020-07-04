@@ -7,16 +7,18 @@ import { StarWarsDataService } from './features/star-wars-data/services/star-war
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
-  title = 'star-wars-duel';
 
-  links = ['Home', 'Fight with characters', 'Fight with ships'];
+  links = [
+    {path: 'home', title: 'Home'},
+    {path: 'characters', title: 'Fight with characters'},
+    {path: 'starships', title: 'Fight with ships'}];
   activeLink = this.links[0];
 
   constructor(private starWarsDataService: StarWarsDataService) {
   }
 
   ngOnInit(): void {
-    this.starWarsDataService.loadAllPeople();
-    this.starWarsDataService.loadAllStarships();
+    // this.starWarsDataService.loadAllPeople();
+    // this.starWarsDataService.loadAllStarships();
   }
 }
