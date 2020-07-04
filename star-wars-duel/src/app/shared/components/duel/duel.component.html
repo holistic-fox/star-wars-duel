@@ -16,7 +16,7 @@
         </mat-list>
       </mat-card-content>
       <mat-card-actions>
-        <button mat-raised-button color="primary">Draw a character!</button>
+        <button mat-raised-button color="primary" (click)="playerOneDraw.emit()">Draw a character!</button>
       </mat-card-actions>
     </mat-card>
   </div>
@@ -32,7 +32,7 @@
       </mat-card-header>
 
       <mat-card-actions>
-        <button mat-raised-button color="primary">Play again!</button>
+        <button mat-raised-button color="primary" (click)="reset.emit()">Play again!</button>
       </mat-card-actions>
     </mat-card>
   </div>
@@ -53,7 +53,7 @@
         </mat-list>
       </mat-card-content>
       <mat-card-actions>
-        <button mat-raised-button color="primary">Draw a character!</button>
+        <button mat-raised-button color="primary" (click)="playerTwoDraw.emit()">Draw a character!</button>
       </mat-card-actions>
     </mat-card>
   </div>

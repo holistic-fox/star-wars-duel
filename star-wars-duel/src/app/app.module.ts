@@ -14,6 +14,7 @@ import { HomePageModule } from './features/home-page/home-page.module';
 import { PeopleDuelPageModule } from './features/people-duel-page/people-duel-page.module';
 import { StarshipsDuelPageModule } from './features/starships-duel-page/starships-duel-page.module';
 import { StarWarsDataModule } from './features/star-wars-data/star-wars-data.module';
+import { GameplayModule } from './features/gameplay/gameplay.module';
 
 
 @NgModule({
@@ -29,6 +30,7 @@ import { StarWarsDataModule } from './features/star-wars-data/star-wars-data.mod
     StarWarsDataModule,
     StarshipsDuelPageModule,
     PeopleDuelPageModule,
+    GameplayModule,
     StoreModule.forRoot({}),
     EffectsModule.forRoot([]),
     StoreDevtoolsModule.instrument({})
