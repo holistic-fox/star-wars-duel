@@ -1,9 +1,10 @@
 import { Action, createReducer, on } from '@ngrx/store';
-import { initialState, GameplayInterface } from './gameplay.interface';
+import { GameplayInterface, initialState } from './gameplay.interface';
 import { GameMode } from '../models/game-mode';
 import { Duel } from '../models/duel';
 import * as A from './gameplay.actions';
 import * as R from 'ramda';
+import { Player } from '../models/player';
 
 const reducer = createReducer(initialState,
   on(A.reset, (state, {mode}) => {
@@ -23,8 +24,27 @@ const reducer = createReducer(initialState,
     }
     return R.set(lensProp, resetValue, state);
   }),
-  on(A.playerDraw, (state, {player, mode}) => {
-    return state;
+  on(A.playerDrawSuccess, (state, {player, mode, entity}) => {
+    let gameLens;
+    switch (mode) {
+      case GameMode.People:
+        gameLens = 'peopleDuel';
+        break;
+      case GameMode.Starships:
+        gameLens = 'starshipsDuel';
+        break;
+    }
+    let playerLens;
+    switch (player) {
+      case Player.One:
+        playerLens = 'playerOnePick';
+        break;
+      case Player.Two:
+        playerLens = 'playerTwoPick';
+        break;
+    }
+
+    return R.set(R.lensPath([gameLens, playerLens]), entity, state);
   }),
 )
 

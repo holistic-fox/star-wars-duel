@@ -18,3 +18,5 @@ export const initialState: StarWarsDataInterface = {
   people: [],
   starships: [],
 }
+
+export const starWarsStoreName = 'star_wars_data';

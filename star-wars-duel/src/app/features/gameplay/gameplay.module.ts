@@ -6,6 +6,8 @@ import { StoreModule } from '@ngrx/store';
 
 import { gameplayReducer } from './store/gameplay.reducer';
 import { GameplayService } from './services/gameplay.service';
+import { EffectsModule } from '@ngrx/effects';
+import { GameplayEffects } from './store/gameplay.effects';
 
 
 @NgModule({
@@ -14,6 +16,7 @@ import { GameplayService } from './services/gameplay.service';
     CommonModule,
     HttpClientModule,
     StoreModule.forFeature('gameplay', gameplayReducer),
+    EffectsModule.forFeature([GameplayEffects])
   ],
   providers: [GameplayService]
 })

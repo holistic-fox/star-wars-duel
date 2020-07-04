@@ -8,9 +8,10 @@ import * as A from '../store/gameplay.actions';
 @Injectable()
 export class GameplayService {
 
-  constructor(private store: Store<GameplayInterface>) {
+  constructor(private store: Store<GameplayInterface>,) {
   }
 
   playerDraw = (player: Player, mode: GameMode) => this.store.dispatch(A.playerDraw({ player, mode }));
-  reset = (mode: GameMode) => this.store.dispatch(A.reset({ mode }));
+
+  reset = (mode: GameMode) => this.store.dispatch(A.reset({mode}));
 }
