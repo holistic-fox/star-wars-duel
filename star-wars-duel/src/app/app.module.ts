@@ -10,6 +10,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 import { HomePageModule } from './features/home-page/home-page.module';
+import { StarWarsDataModule } from './features/star-wars-data/star-wars-data.module';
 
 
 
@@ -23,6 +24,7 @@ import { HomePageModule } from './features/home-page/home-page.module';
     BrowserAnimationsModule,
     MatTabsModule,
     HomePageModule,
+    StarWarsDataModule,
     StoreModule.forRoot({}),
     StoreDevtoolsModule.instrument({})
   ],
