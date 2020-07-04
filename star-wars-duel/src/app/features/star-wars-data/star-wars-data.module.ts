@@ -1,8 +1,13 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { StarWarsDataService } from './services/star-wars-data.service';
+import { HttpClientModule } from '@angular/common/http';
+
 import { StoreModule } from '@ngrx/store';
+
 import { starWarsDataReducer } from './store/star-wars-data.reducer';
+import { StarWarsDataService } from './services/star-wars-data.service';
+import { SwapiService } from './services/swapi.service';
+
 
 
 
@@ -10,8 +15,9 @@ import { starWarsDataReducer } from './store/star-wars-data.reducer';
   declarations: [],
   imports: [
     CommonModule,
+    HttpClientModule,
     StoreModule.forFeature('star_wars_data', starWarsDataReducer)
   ],
-  providers: [StarWarsDataService]
+  providers: [StarWarsDataService, SwapiService]
 })
 export class StarWarsDataModule { }
