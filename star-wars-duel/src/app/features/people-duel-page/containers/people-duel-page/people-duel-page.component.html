@@ -6,6 +6,7 @@
   [isPlayerTwoPickDisabled]="isPlayerTwoPickDisabled$ | async"
   [isResetGameDisabled]="isResetGameDisabled$ | async"
   [result]="result$ | async"
+  [duelNotPossible]="!(isGameReady$| async)"
   (playerOneDraw)="playerOneDraw()"
   (playerTwoDraw)="playerTwoDraw()"
   (reset)="reset()"
