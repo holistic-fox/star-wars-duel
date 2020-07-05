@@ -30,7 +30,8 @@
       </mat-card-header>
 
       <mat-card-actions>
-        <button mat-raised-button color="primary" (click)="reset.emit()">Play again!</button>
+        <button mat-raised-button color="primary" [disabled]="isResetGameDisabled" (click)="reset.emit()">Play again!
+        </button>
       </mat-card-actions>
     </mat-card>
   </div>

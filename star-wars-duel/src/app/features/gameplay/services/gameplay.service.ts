@@ -16,11 +16,13 @@ export class GameplayService {
   selectPeopleDuelPlayerTwoPick = () => this.store.select(S.selectPeopleDuelPlayerTwoPick);
   canPlayerOneDrawACharacter = () => this.store.select(S.canPlayerOneDrawACharacter);
   canPlayerTwoDrawACharacter = () => this.store.select(S.canPlayerTwoDrawACharacter);
+  canCharacterGameBeReset = () => this.store.select(S.canCharacterGameBeReset);
 
   selectStarshipsDuelPlayerOnePick = () => this.store.select(S.selectStarshipsDuelPlayerOnePick);
   selectStarshipsDuelPlayerTwoPick = () => this.store.select(S.selectStarshipsDuelPlayerTwoPick);
   canPlayerOneDrawAStarship = () => this.store.select(S.canPlayerOneDrawAStarship);
   canPlayerTwoDrawAStarship = () => this.store.select(S.canPlayerTwoDrawAStarship);
+  canStarshipsGameBeReset = () => this.store.select(S.canStarshipsGameBeReset);
 
   playerDraw = (player: Player, mode: GameMode) => this.store.dispatch(A.playerDraw({player, mode}));
   reset = (mode: GameMode) => this.store.dispatch(A.reset({mode}));
