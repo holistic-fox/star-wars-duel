@@ -48,6 +48,8 @@ const reducer = createReducer(initialState,
 
     return R.set(R.lensPath([gameLens, playerLens]), entity, state);
   }),
+  on(A.addHistoryRecord, (state, {record}) =>
+    R.set(R.lensPath(['history', state.history.length]), record, state)),
 )
 
 export function gameplayReducer(state: GameplayInterface | undefined, action: Action): GameplayInterface {

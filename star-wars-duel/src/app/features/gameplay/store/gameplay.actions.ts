@@ -3,6 +3,7 @@ import { GameMode } from '../models/game-mode';
 import { Player } from '../models/player';
 import { Person } from '../../star-wars-data/models/person';
 import { Starship } from '../../star-wars-data/models/starship';
+import { DuelRecord } from '../models/duel-record';
 
 const PREFIX = '[GAMEPLAY]';
 
@@ -17,3 +18,4 @@ export const playerDrawSuccess = createAction(
   props<{ player: Player, mode: GameMode, entity: Person | Starship }>()
 );
 
+export const addHistoryRecord = createAction(`${PREFIX} Add history record`, props<{ record: DuelRecord }>());
