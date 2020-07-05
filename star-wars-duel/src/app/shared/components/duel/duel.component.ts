@@ -14,6 +14,8 @@ export class DuelComponent implements OnInit {
   @Input() mode: GameMode = GameMode.People;
   @Input() playerOnePick: Person | Starship;
   @Input() playerTwoPick: Person | Starship;
+  @Input() isPlayerOnePickDisabled = true;
+  @Input() isPlayerTwoPickDisabled = true;
   @Input() winner: Player;
 
   @Output() playerOneDraw = new EventEmitter();

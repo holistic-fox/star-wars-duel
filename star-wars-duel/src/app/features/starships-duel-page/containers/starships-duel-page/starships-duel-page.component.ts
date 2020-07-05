@@ -14,6 +14,8 @@ export class StarshipsDuelPageComponent implements OnInit {
 
   public playerOnePick$: Observable<Starship>;
   public playerTwoPick$: Observable<Starship>;
+  public isPlayerOnePickDisabled$: Observable<boolean>;
+  public isPlayerTwoPickDisabled$: Observable<boolean>;
   public mode = GameMode.Starships;
 
   constructor(private gameplayService: GameplayService) {
@@ -22,6 +24,8 @@ export class StarshipsDuelPageComponent implements OnInit {
   ngOnInit(): void {
     this.playerOnePick$ = this.gameplayService.selectStarshipsDuelPlayerOnePick();
     this.playerTwoPick$ = this.gameplayService.selectStarshipsDuelPlayerTwoPick();
+    this.isPlayerOnePickDisabled$ = this.gameplayService.canPlayerOneDrawAStarship();
+    this.isPlayerTwoPickDisabled$ = this.gameplayService.canPlayerTwoDrawAStarship();
   }
 
   playerOneDraw = () => this.gameplayService.playerDraw(Player.One, GameMode.Starships);

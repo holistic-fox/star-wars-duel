@@ -12,7 +12,9 @@
       </mat-card-content>
 
       <mat-card-actions>
-        <button mat-raised-button color="primary" (click)="playerOneDraw.emit()">Draw a character!</button>
+        <button mat-raised-button color="primary" [disabled]="isPlayerOnePickDisabled" (click)="playerOneDraw.emit()">
+          Draw a character!
+        </button>
       </mat-card-actions>
     </mat-card>
   </div>
@@ -45,7 +47,9 @@
       </mat-card-content>
 
       <mat-card-actions>
-        <button mat-raised-button color="primary" (click)="playerTwoDraw.emit()">Draw a character!</button>
+        <button mat-raised-button color="primary" [disabled]="isPlayerTwoPickDisabled" (click)="playerTwoDraw.emit()">
+          Draw a character!
+        </button>
       </mat-card-actions>
     </mat-card>
   </div>

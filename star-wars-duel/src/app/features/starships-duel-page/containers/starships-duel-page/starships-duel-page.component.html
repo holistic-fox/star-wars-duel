@@ -2,6 +2,8 @@
   [mode]="mode"
   [playerOnePick]="playerOnePick$ | async"
   [playerTwoPick]="playerTwoPick$ | async"
+  [isPlayerOnePickDisabled]="isPlayerOnePickDisabled$ | async"
+  [isPlayerTwoPickDisabled]="isPlayerTwoPickDisabled$ | async"
   (playerOneDraw)="playerOneDraw()"
   (playerTwoDraw)="playerTwoDraw()"
   (reset)="reset()"
