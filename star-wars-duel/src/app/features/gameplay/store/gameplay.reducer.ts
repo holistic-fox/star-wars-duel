@@ -7,13 +7,13 @@ import { Player } from '../models/player';
 import * as A from './gameplay.actions';
 import * as R from 'ramda';
 
+const resetValue: PeopleDuel | StarshipsDuel = {
+  playerOnePick: null,
+  playerTwoPick: null,
+};
+
 const reducer = createReducer(initialState,
   on(A.resetMode, (state, {mode}) => {
-    const resetValue: PeopleDuel | StarshipsDuel = {
-      playerOnePick: null,
-      playerTwoPick: null,
-      winner: null,
-    };
     let lensProp;
     switch (mode) {
       case GameMode.People:
@@ -25,7 +25,10 @@ const reducer = createReducer(initialState,
     }
     return R.set(lensProp, resetValue, state);
   }),
-  on(A.resetGameplay, state => initialState),
+  on(A.resetGameplay, state => {
+    state = R.set(R.lensProp('peopleDuel'), resetValue, state);
+    return R.set(R.lensProp('starshipsDuel'), resetValue, state);
+  }),
   on(A.playerDrawSuccess, (state, {player, mode, entity}) => {
     let gameLens;
     switch (mode) {
@@ -48,6 +51,8 @@ const reducer = createReducer(initialState,
 
     return R.set(R.lensPath([gameLens, playerLens]), entity, state);
   }),
+  on(A.addHistoryRecord, (state, {record}) =>
+    R.set(R.lensPath(['history', state.history.length]), record, state)),
 )
 
 export function gameplayReducer(state: GameplayInterface | undefined, action: Action): GameplayInterface {

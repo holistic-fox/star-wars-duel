@@ -5,6 +5,7 @@ import { GameplayService } from '../../../gameplay/services/gameplay.service';
 import { Observable } from 'rxjs';
 import { Starship } from '../../../star-wars-data/models/starship';
 import { StarWarsDataService } from '../../../star-wars-data/services/star-wars-data.service';
+import { DuelRecord } from '../../../gameplay/models/duel-record';
 
 @Component({
   selector: 'app-starships-duel-page',
@@ -20,6 +21,7 @@ export class StarshipsDuelPageComponent implements OnInit {
   public isResetGameDisabled$: Observable<boolean>;
   public result$: Observable<string>;
   public isGameReady$: Observable<boolean>;
+  public history$: Observable<DuelRecord[]>;
 
   public mode = GameMode.Starships;
 
@@ -34,6 +36,7 @@ export class StarshipsDuelPageComponent implements OnInit {
     this.isResetGameDisabled$ = this.gameplayService.canStarshipsGameBeReset();
     this.result$ = this.gameplayService.selectStarshipsDuelResults();
     this.isGameReady$ = this.data.isGameWithStarshipsReady();
+    this.history$ = this.gameplayService.selectStarshipsDuelsHistory();
   }
 
   playerOneDraw = () => this.gameplayService.playerDraw(Player.One, GameMode.Starships);

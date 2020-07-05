@@ -1,0 +1,29 @@
+<div class="page--container">
+
+  <div class="page--container__item-wide">
+    <mat-table [dataSource]="history" class="mat-elevation-z8">
+
+      <ng-container matColumnDef="time">
+        <mat-header-cell *matHeaderCellDef> Time </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.timestamp | date: 'full' }} </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="player1">
+        <mat-header-cell *matHeaderCellDef> Player 1 </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.player1.name}} </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="player2">
+        <mat-header-cell *matHeaderCellDef> Player 2 </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.player2.name}} </mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="result">
+        <mat-header-cell *matHeaderCellDef> Result </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.result}} </mat-cell>
+      </ng-container>
+
+      <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+    </mat-table>
+  </div>
+</div>
