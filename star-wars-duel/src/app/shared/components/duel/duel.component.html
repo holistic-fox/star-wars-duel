@@ -6,15 +6,11 @@
         <mat-card-title>Player 1</mat-card-title>
       </mat-card-header>
 
-      <mat-card-content>
-        <mat-list>
-          <mat-list-item>Item 1</mat-list-item>
-          <mat-divider></mat-divider>
-          <mat-list-item>Item 2</mat-list-item>
-          <mat-divider></mat-divider>
-          <mat-list-item>Item 3</mat-list-item>
-        </mat-list>
+      <mat-card-content [ngSwitch]="mode">
+        <app-person-preview *ngSwitchCase="gameMode.People"></app-person-preview>
+        <app-starship-preview *ngSwitchCase="gameMode.Starships"></app-starship-preview>
       </mat-card-content>
+
       <mat-card-actions>
         <button mat-raised-button color="primary" (click)="playerOneDraw.emit()">Draw a character!</button>
       </mat-card-actions>
@@ -43,15 +39,11 @@
         <mat-card-title>Player 2</mat-card-title>
       </mat-card-header>
 
-      <mat-card-content>
-        <mat-list>
-          <mat-list-item>Item 1</mat-list-item>
-          <mat-divider></mat-divider>
-          <mat-list-item>Item 2</mat-list-item>
-          <mat-divider></mat-divider>
-          <mat-list-item>Item 3</mat-list-item>
-        </mat-list>
+      <mat-card-content [ngSwitch]="mode">
+        <app-person-preview *ngSwitchCase="gameMode.People"></app-person-preview>
+        <app-starship-preview *ngSwitchCase="gameMode.Starships"></app-starship-preview>
       </mat-card-content>
+
       <mat-card-actions>
         <button mat-raised-button color="primary" (click)="playerTwoDraw.emit()">Draw a character!</button>
       </mat-card-actions>

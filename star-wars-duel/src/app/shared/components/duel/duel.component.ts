@@ -20,6 +20,8 @@ export class DuelComponent implements OnInit {
   @Output() playerTwoDraw = new EventEmitter();
   @Output() reset = new EventEmitter();
 
+  public gameMode = GameMode;
+
   constructor() {
   }
 

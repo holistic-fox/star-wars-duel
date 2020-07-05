@@ -10,6 +10,8 @@ import { GameMode } from '../../../gameplay/models/game-mode';
 })
 export class PeopleDuelPageComponent implements OnInit {
 
+  public mode = GameMode.People;
+
   constructor(private gameplayService: GameplayService) { }
 
   ngOnInit(): void {

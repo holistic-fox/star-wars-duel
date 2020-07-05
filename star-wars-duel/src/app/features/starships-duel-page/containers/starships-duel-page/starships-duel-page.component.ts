@@ -10,7 +10,10 @@ import { GameplayService } from '../../../gameplay/services/gameplay.service';
 })
 export class StarshipsDuelPageComponent implements OnInit {
 
-  constructor(private gameplayService: GameplayService) { }
+  public mode = GameMode.Starships;
+
+  constructor(private gameplayService: GameplayService) {
+  }
 
   ngOnInit(): void {
   }
