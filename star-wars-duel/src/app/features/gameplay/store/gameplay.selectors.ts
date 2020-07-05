@@ -2,6 +2,7 @@ import { createFeatureSelector, createSelector } from '@ngrx/store';
 import { gameplayStoreName, GameplayInterface } from './gameplay.interface';
 import { GameResults } from '../models/game-results';
 import * as R from 'ramda';
+import { GameMode } from '../models/game-mode';
 
 export const gameplayFeature = createFeatureSelector<GameplayInterface>(gameplayStoreName);
 
@@ -70,3 +71,9 @@ export const selectDataForStarshipsDuelHistoryRecord = createSelector(
     }
     return ({player1, player2, result});
   });
+
+export const selectGameHistory = createSelector(gameplayFeature, state => state.history);
+export const selectPeopleDuelsHistory = createSelector(selectGameHistory, history =>
+  history.filter(record => R.equals(record.mode, GameMode.People)));
+export const selectStarshipsDuelsHistory = createSelector(selectGameHistory, history =>
+  history.filter(record => R.equals(record.mode, GameMode.Starships)));

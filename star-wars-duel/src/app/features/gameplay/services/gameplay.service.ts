@@ -26,6 +26,9 @@ export class GameplayService {
   canStarshipsGameBeReset = () => this.store.select(S.canStarshipsGameBeReset);
   selectStarshipsDuelResults = () => this.store.select(S.selectStarshipsDuelResults);
 
+  selectPeopleDuelsHistory = () => this.store.select(S.selectPeopleDuelsHistory);
+  selectStarshipsDuelsHistory = () => this.store.select(S.selectStarshipsDuelsHistory);
+
   playerDraw = (player: Player, mode: GameMode) => this.store.dispatch(A.playerDraw({player, mode}));
   resetMode = (mode: GameMode) => this.store.dispatch(A.resetMode({mode}));
 }
