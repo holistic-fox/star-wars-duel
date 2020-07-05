@@ -17,6 +17,7 @@ export class DuelComponent {
   @Input() isPlayerTwoPickDisabled = false;
   @Input() isResetGameDisabled = true;
   @Input() result: string;
+  @Input() duelNotPossible = true;
 
   @Output() playerOneDraw = new EventEmitter();
   @Output() playerTwoDraw = new EventEmitter();

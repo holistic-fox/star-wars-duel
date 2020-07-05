@@ -4,6 +4,7 @@ import { GameMode } from '../../../gameplay/models/game-mode';
 import { GameplayService } from '../../../gameplay/services/gameplay.service';
 import { Observable } from 'rxjs';
 import { Starship } from '../../../star-wars-data/models/starship';
+import { StarWarsDataService } from '../../../star-wars-data/services/star-wars-data.service';
 
 @Component({
   selector: 'app-starships-duel-page',
@@ -18,10 +19,11 @@ export class StarshipsDuelPageComponent implements OnInit {
   public isPlayerTwoPickDisabled$: Observable<boolean>;
   public isResetGameDisabled$: Observable<boolean>;
   public result$: Observable<string>;
+  public isGameReady$: Observable<boolean>;
 
   public mode = GameMode.Starships;
 
-  constructor(private gameplayService: GameplayService) {
+  constructor(private gameplayService: GameplayService, private data: StarWarsDataService) {
   }
 
   ngOnInit(): void {
@@ -31,6 +33,7 @@ export class StarshipsDuelPageComponent implements OnInit {
     this.isPlayerTwoPickDisabled$ = this.gameplayService.canPlayerTwoDrawAStarship();
     this.isResetGameDisabled$ = this.gameplayService.canStarshipsGameBeReset();
     this.result$ = this.gameplayService.selectStarshipsDuelResults();
+    this.isGameReady$ = this.data.isGameWithStarshipsReady();
   }
 
   playerOneDraw = () => this.gameplayService.playerDraw(Player.One, GameMode.Starships);

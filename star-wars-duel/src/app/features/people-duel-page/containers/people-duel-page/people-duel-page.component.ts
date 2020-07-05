@@ -4,6 +4,7 @@ import { Player } from '../../../gameplay/models/player';
 import { GameMode } from '../../../gameplay/models/game-mode';
 import { Observable } from 'rxjs';
 import { Person } from '../../../star-wars-data/models/person';
+import { StarWarsDataService } from '../../../star-wars-data/services/star-wars-data.service';
 
 @Component({
   selector: 'app-people-duel-page',
@@ -18,10 +19,11 @@ export class PeopleDuelPageComponent implements OnInit {
   public isPlayerTwoPickDisabled$: Observable<boolean>;
   public isResetGameDisabled$: Observable<boolean>;
   public result$: Observable<string>;
+  public isGameReady$: Observable<boolean>;
 
   public mode = GameMode.People;
 
-  constructor(private gameplayService: GameplayService) {
+  constructor(private gameplayService: GameplayService, private data: StarWarsDataService) {
   }
 
   ngOnInit(): void {
@@ -31,6 +33,7 @@ export class PeopleDuelPageComponent implements OnInit {
     this.isPlayerTwoPickDisabled$ = this.gameplayService.canPlayerTwoDrawACharacter();
     this.isResetGameDisabled$ = this.gameplayService.canCharacterGameBeReset();
     this.result$ = this.gameplayService.selectCharacterDuelResults();
+    this.isGameReady$ = this.data.isGameWithPeopleReady();
   }
 
   playerOneDraw = () => this.gameplayService.playerDraw(Player.One, GameMode.People);
