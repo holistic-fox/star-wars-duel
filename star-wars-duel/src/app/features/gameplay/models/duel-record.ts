@@ -4,7 +4,7 @@ import { Person } from '../../star-wars-data/models/person';
 import { GameResults } from './game-results';
 
 export interface DuelRecord {
-  date: Date;
+  timestamp: number;
   mode: GameMode;
   player1: Person | Starship;
   player2: Person | Starship;
