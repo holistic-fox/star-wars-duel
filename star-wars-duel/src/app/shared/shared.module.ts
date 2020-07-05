@@ -9,6 +9,7 @@ import { PersonPreviewComponent } from './components/person-preview/person-previ
 import { PreviewListItemComponent } from './components/preview-list-item/preview-list-item.component';
 import { DuelHistoryComponent } from './components/duel-history/duel-history.component';
 import { MatTableModule } from '@angular/material/table';
+import { MatBadgeModule } from '@angular/material/badge';
 
 
 
@@ -21,6 +22,7 @@ import { MatTableModule } from '@angular/material/table';
     MatListModule,
     MatButtonModule,
     MatTableModule,
+    MatBadgeModule,
   ]
 })
 export class SharedModule { }

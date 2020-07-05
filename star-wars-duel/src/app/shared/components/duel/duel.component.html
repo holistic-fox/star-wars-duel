@@ -4,6 +4,7 @@
     <mat-card>
       <mat-card-header>
         <mat-card-title>Player 1</mat-card-title>
+        <mat-card-subtitle>Wins: {{ playerOneScore }} </mat-card-subtitle>
       </mat-card-header>
 
       <mat-card-content [ngSwitch]="mode">
@@ -48,6 +49,7 @@
     <mat-card>
       <mat-card-header>
         <mat-card-title>Player 2</mat-card-title>
+        <mat-card-subtitle>Wins: {{ playerTwoScore }} </mat-card-subtitle>
       </mat-card-header>
 
       <mat-card-content [ngSwitch]="mode">

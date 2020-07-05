@@ -18,6 +18,8 @@ export class DuelComponent {
   @Input() isResetGameDisabled = true;
   @Input() result: string;
   @Input() duelNotPossible = true;
+  @Input() playerOneScore = 0;
+  @Input() playerTwoScore = 0;
 
   @Output() playerOneDraw = new EventEmitter();
   @Output() playerTwoDraw = new EventEmitter();

@@ -6,6 +6,7 @@ import { Observable } from 'rxjs';
 import { Person } from '../../../star-wars-data/models/person';
 import { StarWarsDataService } from '../../../star-wars-data/services/star-wars-data.service';
 import { DuelRecord } from '../../../gameplay/models/duel-record';
+import { GameResults } from '../../../gameplay/models/game-results';
 
 @Component({
   selector: 'app-people-duel-page',
@@ -22,7 +23,8 @@ export class PeopleDuelPageComponent implements OnInit {
   public result$: Observable<string>;
   public isGameReady$: Observable<boolean>;
   public history$: Observable<DuelRecord[]>;
-
+  public playerOneScore$: Observable<number>;
+  public playerTwoScore$: Observable<number>;
   public mode = GameMode.People;
 
   constructor(private gameplayService: GameplayService, private data: StarWarsDataService) {
@@ -37,6 +39,8 @@ export class PeopleDuelPageComponent implements OnInit {
     this.result$ = this.gameplayService.selectCharacterDuelResults();
     this.isGameReady$ = this.data.isGameWithPeopleReady();
     this.history$ = this.gameplayService.selectPeopleDuelsHistory();
+    this.playerOneScore$ = this.gameplayService.selectPlayerScoreInPeopleDuel(GameResults.Player1);
+    this.playerTwoScore$ = this.gameplayService.selectPlayerScoreInPeopleDuel(GameResults.Player2);
   }
 
   playerOneDraw = () => this.gameplayService.playerDraw(Player.One, GameMode.People);
