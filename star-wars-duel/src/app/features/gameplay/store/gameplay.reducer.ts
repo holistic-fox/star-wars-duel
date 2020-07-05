@@ -1,14 +1,15 @@
 import { Action, createReducer, on } from '@ngrx/store';
 import { GameplayInterface, initialState } from './gameplay.interface';
 import { GameMode } from '../models/game-mode';
-import { Duel } from '../models/duel';
+import { PeopleDuel } from '../models/people-duel';
+import { StarshipsDuel } from '../models/starships-duel';
+import { Player } from '../models/player';
 import * as A from './gameplay.actions';
 import * as R from 'ramda';
-import { Player } from '../models/player';
 
 const reducer = createReducer(initialState,
   on(A.reset, (state, {mode}) => {
-    const resetValue: Duel = {
+    const resetValue: PeopleDuel | StarshipsDuel = {
       playerOnePick: null,
       playerTwoPick: null,
       winner: null,

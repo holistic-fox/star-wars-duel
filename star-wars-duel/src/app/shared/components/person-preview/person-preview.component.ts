@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { Person } from '../../../features/star-wars-data/models/person';
 
 @Component({
   selector: 'app-person-preview',
@@ -7,7 +8,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PersonPreviewComponent implements OnInit {
 
-  constructor() { }
+  @Input() person: Person;
+
+  constructor() {
+  }
 
   ngOnInit(): void {
   }

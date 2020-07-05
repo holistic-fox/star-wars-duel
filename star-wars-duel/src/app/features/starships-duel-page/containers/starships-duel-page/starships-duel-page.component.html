@@ -1,5 +1,7 @@
 <app-duel
   [mode]="mode"
+  [playerOnePick]="playerOnePick$ | async"
+  [playerTwoPick]="playerTwoPick$ | async"
   (playerOneDraw)="playerOneDraw()"
   (playerTwoDraw)="playerTwoDraw()"
   (reset)="reset()"

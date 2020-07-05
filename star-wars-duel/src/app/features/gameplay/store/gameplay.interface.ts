@@ -1,8 +1,9 @@
-import { Duel } from '../models/duel';
+import { PeopleDuel } from '../models/people-duel';
+import { StarshipsDuel } from '../models/starships-duel';
 
 export interface GameplayInterface {
-  peopleDuel: Duel;
-  starshipsDuel: Duel;
+  peopleDuel: PeopleDuel;
+  starshipsDuel: StarshipsDuel;
   history: [];
 }
 
@@ -19,3 +20,5 @@ export const initialState: GameplayInterface = {
   },
   history: [],
 }
+
+export const gameplayStoreName = 'gameplay';
