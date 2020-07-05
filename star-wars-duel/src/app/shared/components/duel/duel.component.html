@@ -1,4 +1,4 @@
-<div class="page--container">
+<div *ngIf="!duelNotPossible" class="page--container">
 
   <div class="page--container__item">
     <mat-card>
@@ -68,4 +68,21 @@
     </mat-card>
   </div>
 
+</div>
+
+<div *ngIf="duelNotPossible" class="page--container">
+  <div class="page--container__item-xlarge">
+    <mat-card>
+      <mat-card-header>
+        <div class="example-header-image"></div>
+        <mat-card-title>Something went wrong!</mat-card-title>
+      </mat-card-header>
+      <img mat-card-image src="assets/images/r2andc3po.jpg">
+      <mat-card-content>
+        <p>
+          Unfortunately we could not load the game data, please try to reload the page so R2D2 and C3PO may try to fix this issue.
+        </p>
+      </mat-card-content>
+    </mat-card>
+  </div>
 </div>
