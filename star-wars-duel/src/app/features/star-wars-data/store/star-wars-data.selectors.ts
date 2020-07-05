@@ -9,7 +9,6 @@ export const arePeopleLoading = createSelector(starWarsDataFeature, state => sta
 export const isGameWithPeopleReady = createSelector(arePeopleLoading, selectPeopleList,
   (loading, list) => !loading && !R.isEmpty(list));
 
-
 export const selectStarshipsList = createSelector(starWarsDataFeature, state => state.starships);
 export const areStarshipsLoading = createSelector(starWarsDataFeature, state => state.loading.starships);
 export const isGameWithStarshipsReady = createSelector(areStarshipsLoading, selectStarshipsList,
