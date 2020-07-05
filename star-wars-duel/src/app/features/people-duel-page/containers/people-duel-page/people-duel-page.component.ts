@@ -17,6 +17,7 @@ export class PeopleDuelPageComponent implements OnInit {
   public isPlayerOnePickDisabled$: Observable<boolean>;
   public isPlayerTwoPickDisabled$: Observable<boolean>;
   public isResetGameDisabled$: Observable<boolean>;
+  public winner$: Observable<string>;
 
   public mode = GameMode.People;
 
@@ -29,6 +30,7 @@ export class PeopleDuelPageComponent implements OnInit {
     this.isPlayerOnePickDisabled$ = this.gameplayService.canPlayerOneDrawACharacter();
     this.isPlayerTwoPickDisabled$ = this.gameplayService.canPlayerTwoDrawACharacter();
     this.isResetGameDisabled$ = this.gameplayService.canCharacterGameBeReset();
+    this.winner$ = this.gameplayService.selectCharacterDuelWinner();
   }
 
   playerOneDraw = () => this.gameplayService.playerDraw(Player.One, GameMode.People);

@@ -17,6 +17,7 @@ export class GameplayService {
   canPlayerOneDrawACharacter = () => this.store.select(S.canPlayerOneDrawACharacter);
   canPlayerTwoDrawACharacter = () => this.store.select(S.canPlayerTwoDrawACharacter);
   canCharacterGameBeReset = () => this.store.select(S.canCharacterGameBeReset);
+  selectCharacterDuelWinner = () => this.store.select(S.selectCharacterDuelWinner);
 
   selectStarshipsDuelPlayerOnePick = () => this.store.select(S.selectStarshipsDuelPlayerOnePick);
   selectStarshipsDuelPlayerTwoPick = () => this.store.select(S.selectStarshipsDuelPlayerTwoPick);
