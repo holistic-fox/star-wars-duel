@@ -11,7 +11,7 @@ export const canPlayerOneDrawACharacter = createSelector(selectPeopleDuelPlayerO
 export const canPlayerTwoDrawACharacter = createSelector(selectPeopleDuelPlayerTwoPick, pick => !R.isNil(pick));
 export const canCharacterGameBeReset = createSelector(canPlayerOneDrawACharacter, canPlayerTwoDrawACharacter,
   (player1, player2) => !(player1 && player2));
-export const selectCharacterDuelWinner = createSelector(selectPeopleDuelPlayerOnePick, selectPeopleDuelPlayerTwoPick,
+export const selectCharacterDuelResults = createSelector(selectPeopleDuelPlayerOnePick, selectPeopleDuelPlayerTwoPick,
   (player1, player2) => {
     if (R.isNil(player1) || R.isNil(player2)) { return undefined; }
     if (player1.mass > player2.mass) { return GameResults.Player1; }
@@ -26,4 +26,14 @@ export const canPlayerOneDrawAStarship = createSelector(selectStarshipsDuelPlaye
 export const canPlayerTwoDrawAStarship = createSelector(selectStarshipsDuelPlayerTwoPick, pick => !R.isNil(pick));
 export const canStarshipsGameBeReset = createSelector(canPlayerOneDrawAStarship, canPlayerTwoDrawAStarship,
   (player1, player2) => !(player1 && player2));
+export const selectStarshipsDuelResults = createSelector(selectStarshipsDuelPlayerOnePick, selectStarshipsDuelPlayerTwoPick,
+  (player1, player2) => {
+    if (R.isNil(player1) || R.isNil(player2)) { return undefined; }
+    const player1Crew = parseFloat(player1.crew);
+    const player2Crew = parseFloat(player2.crew);
+    if (player1Crew > player2Crew) { return GameResults.Player1; }
+    if (player2Crew > player1Crew) { return  GameResults.Player2; }
+    if (player1Crew === player2Crew) { return  GameResults.Tie; }
+    return GameResults.Tie;
+  });
 

@@ -17,6 +17,7 @@ export class StarshipsDuelPageComponent implements OnInit {
   public isPlayerOnePickDisabled$: Observable<boolean>;
   public isPlayerTwoPickDisabled$: Observable<boolean>;
   public isResetGameDisabled$: Observable<boolean>;
+  public result$: Observable<string>;
 
   public mode = GameMode.Starships;
 
@@ -29,6 +30,7 @@ export class StarshipsDuelPageComponent implements OnInit {
     this.isPlayerOnePickDisabled$ = this.gameplayService.canPlayerOneDrawAStarship();
     this.isPlayerTwoPickDisabled$ = this.gameplayService.canPlayerTwoDrawAStarship();
     this.isResetGameDisabled$ = this.gameplayService.canStarshipsGameBeReset();
+    this.result$ = this.gameplayService.selectStarshipsDuelResults();
   }
 
   playerOneDraw = () => this.gameplayService.playerDraw(Player.One, GameMode.Starships);
