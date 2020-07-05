@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { Player } from '../../../gameplay/models/player';
 import { GameMode } from '../../../gameplay/models/game-mode';
 import { GameplayService } from '../../../gameplay/services/gameplay.service';
@@ -11,7 +11,8 @@ import { GameResults } from '../../../gameplay/models/game-results';
 @Component({
   selector: 'app-starships-duel-page',
   templateUrl: './starships-duel-page.component.html',
-  styleUrls: ['./starships-duel-page.component.scss']
+  styleUrls: ['./starships-duel-page.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class StarshipsDuelPageComponent implements OnInit {
 

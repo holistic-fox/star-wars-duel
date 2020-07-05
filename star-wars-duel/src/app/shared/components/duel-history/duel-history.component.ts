@@ -1,10 +1,11 @@
-import { Component, Input} from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 import { DuelRecord } from '../../../features/gameplay/models/duel-record';
 
 @Component({
   selector: 'app-duel-history',
   templateUrl: './duel-history.component.html',
-  styleUrls: ['./duel-history.component.scss']
+  styleUrls: ['./duel-history.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class DuelHistoryComponent{
 

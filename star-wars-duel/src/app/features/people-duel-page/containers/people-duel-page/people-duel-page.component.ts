@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { GameplayService } from '../../../gameplay/services/gameplay.service';
 import { Player } from '../../../gameplay/models/player';
 import { GameMode } from '../../../gameplay/models/game-mode';
@@ -11,7 +11,8 @@ import { GameResults } from '../../../gameplay/models/game-results';
 @Component({
   selector: 'app-people-duel-page',
   templateUrl: './people-duel-page.component.html',
-  styleUrls: ['./people-duel-page.component.scss']
+  styleUrls: ['./people-duel-page.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class PeopleDuelPageComponent implements OnInit {
 
