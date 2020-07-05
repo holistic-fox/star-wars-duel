@@ -12,8 +12,13 @@
       </mat-card-content>
 
       <mat-card-actions>
-        <button mat-raised-button color="primary" [disabled]="isPlayerOnePickDisabled" (click)="playerOneDraw.emit()">
-          Draw a character!
+        <button
+          mat-raised-button color="primary"
+          [ngSwitch]="mode"
+          [disabled]="isPlayerOnePickDisabled"
+          (click)="playerOneDraw.emit()">
+          <span *ngSwitchCase="gameMode.People">Draw a character!</span>
+          <span *ngSwitchCase="gameMode.Starships">Draw a starship!</span>
         </button>
       </mat-card-actions>
     </mat-card>
@@ -50,9 +55,14 @@
         <app-starship-preview *ngSwitchCase="gameMode.Starships" [starship]="playerTwoPick"></app-starship-preview>
       </mat-card-content>
 
-      <mat-card-actions>
-        <button mat-raised-button color="primary" [disabled]="isPlayerTwoPickDisabled" (click)="playerTwoDraw.emit()">
-          Draw a character!
+      <mat-card-actions >
+        <button
+          mat-raised-button color="primary"
+          [ngSwitch]="mode"
+          [disabled]="isPlayerTwoPickDisabled"
+          (click)="playerTwoDraw.emit()">
+          <span *ngSwitchCase="gameMode.People">Draw a character!</span>
+          <span *ngSwitchCase="gameMode.Starships">Draw a starship!</span>
         </button>
       </mat-card-actions>
     </mat-card>
