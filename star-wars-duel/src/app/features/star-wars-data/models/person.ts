@@ -8,10 +8,10 @@ export interface Person {
   birth_year: string;
   gender: string;
   homeworld: string;
-  films: [];
-  species: [];
-  vehicles: [];
-  starships: [];
+  films: string[];
+  species: string[];
+  vehicles: string[];
+  starships: string[];
   created: string;
   edited: string;
   url: string;
