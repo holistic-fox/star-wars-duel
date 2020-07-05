@@ -6,11 +6,12 @@ import { MatListModule } from '@angular/material/list';
 import { MatButtonModule } from '@angular/material/button';
 import { StarshipPreviewComponent } from './components/starship-preview/starship-preview.component';
 import { PersonPreviewComponent } from './components/person-preview/person-preview.component';
+import { PreviewListItemComponent } from './components/preview-list-item/preview-list-item.component';
 
 
 
 @NgModule({
-  declarations: [DuelComponent, StarshipPreviewComponent, PersonPreviewComponent],
+  declarations: [DuelComponent, StarshipPreviewComponent, PersonPreviewComponent, PreviewListItemComponent],
   exports: [DuelComponent],
   imports: [
     CommonModule,

@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { Starship } from '../../../features/star-wars-data/models/starship';
 
 @Component({
@@ -6,14 +6,7 @@ import { Starship } from '../../../features/star-wars-data/models/starship';
   templateUrl: './starship-preview.component.html',
   styleUrls: ['./starship-preview.component.scss']
 })
-export class StarshipPreviewComponent implements OnInit {
+export class StarshipPreviewComponent {
 
   @Input() starship: Starship;
-
-  constructor() {
-  }
-
-  ngOnInit(): void {
-  }
-
 }
