@@ -6,7 +6,9 @@ import { Starship } from '../../star-wars-data/models/starship';
 
 const PREFIX = '[GAMEPLAY]';
 
-export const reset = createAction(`${PREFIX} Reset`, props<{ mode: GameMode }>());
+export const resetMode = createAction(`${PREFIX} Reset mode`, props<{ mode: GameMode }>());
+
+export const resetGameplay = createAction(`${PREFIX} Reset gameplay`);
 
 export const playerDraw = createAction(`${PREFIX} Player draw`, props<{ player: Player, mode: GameMode }>());
 

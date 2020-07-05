@@ -1,12 +1,13 @@
 import { Injectable } from '@angular/core';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
-import { map, take, tap, withLatestFrom } from 'rxjs/operators';
+import { ROUTER_NAVIGATED } from '@ngrx/router-store';
+import { map, withLatestFrom } from 'rxjs/operators';
 import { Store } from '@ngrx/store';
 import { StarWarsDataInterface } from '../../star-wars-data/store/star-wars-data.interface';
 import { selectPeopleList, selectStarshipsList } from '../../star-wars-data/store/star-wars-data.selectors';
 import { getRandomArrayElement } from '../utilities/gameplay.utilities';
-import * as A from './gameplay.actions';
 import { GameMode } from '../models/game-mode';
+import * as A from './gameplay.actions';
 import * as R from 'ramda';
 
 @Injectable()
@@ -32,6 +33,11 @@ export class GameplayEffects {
         mode:  payload.mode,
         entity
       }))),
+  ));
+
+  resetGameOnNavigationChange$ = createEffect(() => this.actions$.pipe(
+    ofType(ROUTER_NAVIGATED),
+    map(() => (A.resetGameplay()))
   ));
 
   constructor(

@@ -8,7 +8,7 @@ import * as A from './gameplay.actions';
 import * as R from 'ramda';
 
 const reducer = createReducer(initialState,
-  on(A.reset, (state, {mode}) => {
+  on(A.resetMode, (state, {mode}) => {
     const resetValue: PeopleDuel | StarshipsDuel = {
       playerOnePick: null,
       playerTwoPick: null,
@@ -25,6 +25,7 @@ const reducer = createReducer(initialState,
     }
     return R.set(lensProp, resetValue, state);
   }),
+  on(A.resetGameplay, state => initialState),
   on(A.playerDrawSuccess, (state, {player, mode, entity}) => {
     let gameLens;
     switch (mode) {

@@ -27,5 +27,5 @@ export class GameplayService {
   selectStarshipsDuelResults = () => this.store.select(S.selectStarshipsDuelResults);
 
   playerDraw = (player: Player, mode: GameMode) => this.store.dispatch(A.playerDraw({player, mode}));
-  reset = (mode: GameMode) => this.store.dispatch(A.reset({mode}));
+  resetMode = (mode: GameMode) => this.store.dispatch(A.resetMode({mode}));
 }

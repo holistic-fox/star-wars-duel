@@ -35,5 +35,5 @@ export class StarshipsDuelPageComponent implements OnInit {
 
   playerOneDraw = () => this.gameplayService.playerDraw(Player.One, GameMode.Starships);
   playerTwoDraw = () => this.gameplayService.playerDraw(Player.Two, GameMode.Starships);
-  reset = () => this.gameplayService.reset(GameMode.Starships);
+  reset = () => this.gameplayService.resetMode(GameMode.Starships);
 }

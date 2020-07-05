@@ -35,5 +35,5 @@ export class PeopleDuelPageComponent implements OnInit {
 
   playerOneDraw = () => this.gameplayService.playerDraw(Player.One, GameMode.People);
   playerTwoDraw = () => this.gameplayService.playerDraw(Player.Two, GameMode.People);
-  reset = () => this.gameplayService.reset(GameMode.People);
+  reset = () => this.gameplayService.resetMode(GameMode.People);
 }
