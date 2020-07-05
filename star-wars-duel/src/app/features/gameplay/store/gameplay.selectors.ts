@@ -74,6 +74,6 @@ export const selectDataForStarshipsDuelHistoryRecord = createSelector(
 
 export const selectGameHistory = createSelector(gameplayFeature, state => state.history);
 export const selectPeopleDuelsHistory = createSelector(selectGameHistory, history =>
-  history.filter(record => R.equals(record.mode, GameMode.People)));
+  history.filter(record => R.equals(record.mode, GameMode.People)).reverse());
 export const selectStarshipsDuelsHistory = createSelector(selectGameHistory, history =>
-  history.filter(record => R.equals(record.mode, GameMode.Starships)));
+  history.filter(record => R.equals(record.mode, GameMode.Starships)).reverse());
