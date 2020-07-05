@@ -6,17 +6,15 @@
         <mat-card-title>Player 1</mat-card-title>
       </mat-card-header>
 
-      <mat-card-content>
-        <mat-list>
-          <mat-list-item>Item 1</mat-list-item>
-          <mat-divider></mat-divider>
-          <mat-list-item>Item 2</mat-list-item>
-          <mat-divider></mat-divider>
-          <mat-list-item>Item 3</mat-list-item>
-        </mat-list>
+      <mat-card-content [ngSwitch]="mode">
+        <app-person-preview *ngSwitchCase="gameMode.People" [person]="playerOnePick"></app-person-preview>
+        <app-starship-preview *ngSwitchCase="gameMode.Starships" [starship]="playerOnePick"></app-starship-preview>
       </mat-card-content>
+
       <mat-card-actions>
-        <button mat-raised-button color="primary" (click)="playerOneDraw.emit()">Draw a character!</button>
+        <button mat-raised-button color="primary" [disabled]="isPlayerOnePickDisabled" (click)="playerOneDraw.emit()">
+          Draw a character!
+        </button>
       </mat-card-actions>
     </mat-card>
   </div>
@@ -25,14 +23,18 @@
     <mat-card>
       <mat-card-header>
         <mat-card-title>
+          <h2>
+            Results:
+          </h2>
           <h1>
-            Player 1 wins
+            {{ result }}
           </h1>
         </mat-card-title>
       </mat-card-header>
 
       <mat-card-actions>
-        <button mat-raised-button color="primary" (click)="reset.emit()">Play again!</button>
+        <button mat-raised-button color="primary" [disabled]="isResetGameDisabled" (click)="reset.emit()">Play again!
+        </button>
       </mat-card-actions>
     </mat-card>
   </div>
@@ -43,17 +45,15 @@
         <mat-card-title>Player 2</mat-card-title>
       </mat-card-header>
 
-      <mat-card-content>
-        <mat-list>
-          <mat-list-item>Item 1</mat-list-item>
-          <mat-divider></mat-divider>
-          <mat-list-item>Item 2</mat-list-item>
-          <mat-divider></mat-divider>
-          <mat-list-item>Item 3</mat-list-item>
-        </mat-list>
+      <mat-card-content [ngSwitch]="mode">
+        <app-person-preview *ngSwitchCase="gameMode.People" [person]="playerTwoPick"></app-person-preview>
+        <app-starship-preview *ngSwitchCase="gameMode.Starships" [starship]="playerTwoPick"></app-starship-preview>
       </mat-card-content>
+
       <mat-card-actions>
-        <button mat-raised-button color="primary" (click)="playerTwoDraw.emit()">Draw a character!</button>
+        <button mat-raised-button color="primary" [disabled]="isPlayerTwoPickDisabled" (click)="playerTwoDraw.emit()">
+          Draw a character!
+        </button>
       </mat-card-actions>
     </mat-card>
   </div>

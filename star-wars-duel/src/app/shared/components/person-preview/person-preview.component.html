@@ -1,0 +1,32 @@
+<mat-list *ngIf="person">
+  <mat-list-item>
+    <app-preview-list-item
+      [label]="'Name'"
+      [value]="person.name">
+    </app-preview-list-item>
+  </mat-list-item>
+  <mat-list-item>
+    <app-preview-list-item
+      [label]="'Gender'"
+      [value]="person.gender">
+    </app-preview-list-item>
+  </mat-list-item>
+  <mat-list-item>
+    <app-preview-list-item
+      [label]="'Birth year'"
+      [value]="person.birth_year">
+    </app-preview-list-item>
+  </mat-list-item>
+  <mat-list-item>
+    <app-preview-list-item
+      [label]="'Height'"
+      [value]="person.height">
+    </app-preview-list-item>
+  </mat-list-item>
+  <mat-list-item>
+    <app-preview-list-item
+      [label]="'Mass'"
+      [value]="person.mass">
+    </app-preview-list-item>
+  </mat-list-item>
+</mat-list>

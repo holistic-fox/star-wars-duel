@@ -18,7 +18,7 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    // this.starWarsDataService.loadAllPeople();
-    // this.starWarsDataService.loadAllStarships();
+    this.starWarsDataService.loadAllPeople();
+    this.starWarsDataService.loadAllStarships();
   }
 }

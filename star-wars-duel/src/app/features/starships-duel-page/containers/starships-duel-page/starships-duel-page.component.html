@@ -1,2 +1,12 @@
-<app-duel></app-duel>
-
+<app-duel
+  [mode]="mode"
+  [playerOnePick]="playerOnePick$ | async"
+  [playerTwoPick]="playerTwoPick$ | async"
+  [isPlayerOnePickDisabled]="isPlayerOnePickDisabled$ | async"
+  [isPlayerTwoPickDisabled]="isPlayerTwoPickDisabled$ | async"
+  [isResetGameDisabled]="isResetGameDisabled$ | async"
+  [result]="result$ | async"
+  (playerOneDraw)="playerOneDraw()"
+  (playerTwoDraw)="playerTwoDraw()"
+  (reset)="reset()"
+></app-duel>
