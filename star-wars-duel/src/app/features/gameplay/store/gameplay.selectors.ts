@@ -1,8 +1,8 @@
 import { createFeatureSelector, createSelector } from '@ngrx/store';
 import { gameplayStoreName, GameplayInterface } from './gameplay.interface';
 import { GameResults } from '../models/game-results';
-import * as R from 'ramda';
 import { GameMode } from '../models/game-mode';
+import * as R from 'ramda';
 
 export const gameplayFeature = createFeatureSelector<GameplayInterface>(gameplayStoreName);
 
@@ -77,3 +77,11 @@ export const selectPeopleDuelsHistory = createSelector(selectGameHistory, histor
   history.filter(record => R.equals(record.mode, GameMode.People)).reverse());
 export const selectStarshipsDuelsHistory = createSelector(selectGameHistory, history =>
   history.filter(record => R.equals(record.mode, GameMode.Starships)).reverse());
+
+export const selectPlayerScoreInPeopleDuel = createSelector(selectPeopleDuelsHistory,
+  (history, props: { player: GameResults }) =>
+    R.length(history.filter(record => R.equals(record.result, props.player))));
+
+export const selectPlayerScoreInStarshipsDuel = createSelector(selectStarshipsDuelsHistory,
+  (history, props: { player: GameResults }) =>
+    R.length(history.filter(record => R.equals(record.result, props.player))));
