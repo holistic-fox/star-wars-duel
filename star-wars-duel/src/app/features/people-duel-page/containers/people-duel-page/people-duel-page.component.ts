@@ -5,6 +5,7 @@ import { GameMode } from '../../../gameplay/models/game-mode';
 import { Observable } from 'rxjs';
 import { Person } from '../../../star-wars-data/models/person';
 import { StarWarsDataService } from '../../../star-wars-data/services/star-wars-data.service';
+import { DuelRecord } from '../../../gameplay/models/duel-record';
 
 @Component({
   selector: 'app-people-duel-page',
@@ -20,6 +21,7 @@ export class PeopleDuelPageComponent implements OnInit {
   public isResetGameDisabled$: Observable<boolean>;
   public result$: Observable<string>;
   public isGameReady$: Observable<boolean>;
+  public history$: Observable<DuelRecord[]>;
 
   public mode = GameMode.People;
 
@@ -34,6 +36,7 @@ export class PeopleDuelPageComponent implements OnInit {
     this.isResetGameDisabled$ = this.gameplayService.canCharacterGameBeReset();
     this.result$ = this.gameplayService.selectCharacterDuelResults();
     this.isGameReady$ = this.data.isGameWithPeopleReady();
+    this.history$ = this.gameplayService.selectPeopleDuelsHistory();
   }
 
   playerOneDraw = () => this.gameplayService.playerDraw(Player.One, GameMode.People);

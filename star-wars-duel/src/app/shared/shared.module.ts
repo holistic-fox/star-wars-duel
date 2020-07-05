@@ -7,17 +7,20 @@ import { MatButtonModule } from '@angular/material/button';
 import { StarshipPreviewComponent } from './components/starship-preview/starship-preview.component';
 import { PersonPreviewComponent } from './components/person-preview/person-preview.component';
 import { PreviewListItemComponent } from './components/preview-list-item/preview-list-item.component';
+import { DuelHistoryComponent } from './components/duel-history/duel-history.component';
+import { MatTableModule } from '@angular/material/table';
 
 
 
 @NgModule({
-  declarations: [DuelComponent, StarshipPreviewComponent, PersonPreviewComponent, PreviewListItemComponent],
-  exports: [DuelComponent],
+  declarations: [DuelComponent, StarshipPreviewComponent, PersonPreviewComponent, PreviewListItemComponent, DuelHistoryComponent],
+  exports: [DuelComponent, DuelHistoryComponent],
   imports: [
     CommonModule,
     MatCardModule,
     MatListModule,
     MatButtonModule,
+    MatTableModule,
   ]
 })
 export class SharedModule { }
