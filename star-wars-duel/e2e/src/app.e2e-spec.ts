@@ -8,9 +8,21 @@ describe('workspace-project App', () => {
     page = new AppPage();
   });
 
-  it('should display welcome message', () => {
-    page.navigateTo();
-    expect(page.getTitleText()).toEqual('star-wars-duel app is running!');
+  describe('home page', () => {
+    it('should display navigation menu', () => {
+      page.navigateTo();
+      expect(page.getNavigation().isDisplayed()).toBeTruthy();
+    });
+
+    it('should display fight with characters card', () => {
+      page.navigateTo();
+      expect(page.getFightWithCharactersCard().isDisplayed()).toBeTruthy();
+    });
+
+    it('should display fight with starships card', () => {
+      page.navigateTo();
+      expect(page.getFightWithStarshipsCard().isDisplayed()).toBeTruthy();
+    });
   });
 
   afterEach(async () => {

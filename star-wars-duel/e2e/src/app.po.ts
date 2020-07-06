@@ -1,11 +1,21 @@
 import { browser, by, element } from 'protractor';
+import { WebdriverWebElement } from 'protractor/built/element';
+import { WebElementPromise } from 'selenium-webdriver';
 
 export class AppPage {
   navigateTo(): Promise<unknown> {
     return browser.get(browser.baseUrl) as Promise<unknown>;
   }
 
-  getTitleText(): Promise<string> {
-    return element(by.css('app-root .content span')).getText() as Promise<string>;
+  getNavigation(): WebElementPromise {
+    return element(by.css('[e2e="star-wars-duel-navigation"]')).getWebElement() as WebElementPromise;
+  }
+
+  getFightWithCharactersCard(): WebElementPromise {
+    return element(by.css('[e2e="fight-with-characters"]')).getWebElement() as WebElementPromise;
+  }
+
+  getFightWithStarshipsCard(): WebElementPromise {
+    return element(by.css('[e2e="fight-with-starships"]')).getWebElement() as WebElementPromise;
   }
 }
