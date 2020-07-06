@@ -1,5 +1,4 @@
 import { browser, by, element } from 'protractor';
-import { WebdriverWebElement } from 'protractor/built/element';
 import { WebElementPromise } from 'selenium-webdriver';
 
 export class AppPage {

@@ -29,13 +29,13 @@ describe('workspace-project App', () => {
     it('should be possible to navigate to fight with characters mode', () => {
       page.navigateTo();
       page.getFightWithCharactersCard().click();
-      expect(browser.getCurrentUrl()).toEqual(`${baseUrl}/characters`);
+      expect(browser.getCurrentUrl()).toEqual(`${browser.baseUrl}characters`);
     });
 
     it('should be possible to navigate to fight with starships mode', () => {
       page.navigateTo();
       page.getFightWithStarshipsCard().click();
-      expect(browser.getCurrentUrl()).toEqual(`${baseUrl}/starships`);
+      expect(browser.getCurrentUrl()).toEqual(`${browser.baseUrl}starships`);
     });
   });
 
