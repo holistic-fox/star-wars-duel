@@ -2,6 +2,8 @@ import { AppPage } from './app.po';
 import { browser, logging } from 'protractor';
 
 describe('workspace-project App', () => {
+
+  const baseUrl = 'http://localhost:4200';
   let page: AppPage;
 
   beforeEach(() => {
@@ -22,6 +24,18 @@ describe('workspace-project App', () => {
     it('should display fight with starships card', () => {
       page.navigateTo();
       expect(page.getFightWithStarshipsCard().isDisplayed()).toBeTruthy();
+    });
+
+    it('should be possible to navigate to fight with characters mode', () => {
+      page.navigateTo();
+      page.getFightWithCharactersCard().click();
+      expect(browser.getCurrentUrl()).toEqual(`${baseUrl}/characters`);
+    });
+
+    it('should be possible to navigate to fight with starships mode', () => {
+      page.navigateTo();
+      page.getFightWithStarshipsCard().click();
+      expect(browser.getCurrentUrl()).toEqual(`${baseUrl}/starships`);
     });
   });
 
