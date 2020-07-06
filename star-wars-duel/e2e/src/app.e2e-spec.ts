@@ -3,7 +3,6 @@ import { browser, logging } from 'protractor';
 
 describe('workspace-project App', () => {
 
-  const baseUrl = 'http://localhost:4200';
   let page: AppPage;
 
   beforeEach(() => {
