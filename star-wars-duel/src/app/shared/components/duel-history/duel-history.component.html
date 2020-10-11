@@ -4,21 +4,21 @@
     <mat-table [dataSource]="history" class="mat-elevation-z8">
 
       <ng-container matColumnDef="time">
-        <mat-header-cell *matHeaderCellDef> Time </mat-header-cell>
+        <mat-header-cell *matHeaderCellDef> czas </mat-header-cell>
         <mat-cell *matCellDef="let element"> {{element.timestamp | date: 'full' }} </mat-cell>
       </ng-container>
 
       <ng-container matColumnDef="player1">
-        <mat-header-cell *matHeaderCellDef> Player 1 </mat-header-cell>
+        <mat-header-cell *matHeaderCellDef> Kot 1 </mat-header-cell>
         <mat-cell *matCellDef="let element"> {{element.player1.name}} </mat-cell>
       </ng-container>
 
       <ng-container matColumnDef="player2">
-        <mat-header-cell *matHeaderCellDef> Player 2 </mat-header-cell>
+        <mat-header-cell *matHeaderCellDef> Kot 2 </mat-header-cell>
         <mat-cell *matCellDef="let element"> {{element.player2.name}} </mat-cell>
       </ng-container>
       <ng-container matColumnDef="result">
-        <mat-header-cell *matHeaderCellDef> Result </mat-header-cell>
+        <mat-header-cell *matHeaderCellDef> Wynik </mat-header-cell>
         <mat-cell *matCellDef="let element"> {{element.result}} </mat-cell>
       </ng-container>
 
