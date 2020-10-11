@@ -6,11 +6,13 @@ import { StoreModule } from '@ngrx/store';
 import { HomePageComponent } from './features/home-page/containers/home-page/home-page.component';
 import { PeopleDuelPageComponent } from './features/people-duel-page/containers/people-duel-page/people-duel-page.component';
 import { StarshipsDuelPageComponent } from './features/starships-duel-page/containers/starships-duel-page/starships-duel-page.component';
+import { StreamsComponent } from './features/streams/streams.component';
 
 const routes: Routes = [
   { path: 'home', component: HomePageComponent },
   { path: 'characters', component: PeopleDuelPageComponent },
   { path: 'starships', component: StarshipsDuelPageComponent },
+  { path: 'streams', component: StreamsComponent },
   { path: '**', redirectTo: 'home' },
   ];
 

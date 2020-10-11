@@ -15,11 +15,13 @@ import { PeopleDuelPageModule } from './features/people-duel-page/people-duel-pa
 import { StarshipsDuelPageModule } from './features/starships-duel-page/starships-duel-page.module';
 import { StarWarsDataModule } from './features/star-wars-data/star-wars-data.module';
 import { GameplayModule } from './features/gameplay/gameplay.module';
+import { StreamsComponent } from './features/streams/streams.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
+    StreamsComponent,
   ],
   imports: [
     BrowserModule,
