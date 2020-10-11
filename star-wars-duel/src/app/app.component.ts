@@ -9,9 +9,9 @@ import { StarWarsDataService } from './features/star-wars-data/services/star-war
 export class AppComponent implements OnInit {
 
   links = [
-    {path: 'home', title: 'Home'},
-    {path: 'characters', title: 'Fight with characters'},
-    {path: 'starships', title: 'Fight with ships'}
+    {path: 'home', title: 'DOM'},
+    {path: 'characters', title: 'Walka 1'},
+    {path: 'starships', title: 'Walka 2'}
   ];
 
   constructor(private starWarsDataService: StarWarsDataService) {
