@@ -14,8 +14,12 @@ export const isSkywalker = (player: Person): boolean =>
 export const isVader = (player: Person): boolean =>
   R.prop('name', player) === 'Darth Vader';
 
+export const isJoda = (player: Person): boolean =>
+  R.prop('name', player) === 'Yoda';
+
 export const getPlayerScore = (player: Person): number => {
 
+  if (isJoda(player)) { return 10000; }
   if (isSkywalker(player)) { return 9999; }
   if (isVader(player)) { return 9998; }
 
