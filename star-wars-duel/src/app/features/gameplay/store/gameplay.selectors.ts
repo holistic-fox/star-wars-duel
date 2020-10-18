@@ -2,6 +2,7 @@ import { createFeatureSelector, createSelector } from '@ngrx/store';
 import { gameplayStoreName, GameplayInterface } from './gameplay.interface';
 import { GameResults } from '../models/game-results';
 import { GameMode } from '../models/game-mode';
+import { getPeopleDuelResult } from '../utilities/gameplay.utilities';
 import * as R from 'ramda';
 
 export const gameplayFeature = createFeatureSelector<GameplayInterface>(gameplayStoreName);
@@ -13,21 +14,7 @@ export const canPlayerTwoDrawACharacter = createSelector(selectPeopleDuelPlayerT
 export const canCharacterGameBeReset = createSelector(canPlayerOneDrawACharacter, canPlayerTwoDrawACharacter,
   (player1, player2) => !(player1 && player2));
 export const selectCharacterDuelResults = createSelector(selectPeopleDuelPlayerOnePick, selectPeopleDuelPlayerTwoPick,
-  (player1, player2) => {
-    if (R.isNil(player1) || R.isNil(player2)) {
-      return undefined;
-    }
-    if (player1.mass > player2.mass) {
-      return GameResults.Player1;
-    }
-    if (player2.mass > player1.mass) {
-      return GameResults.Player2;
-    }
-    if (player1.mass === player2.mass) {
-      return GameResults.Tie;
-    }
-    return GameResults.Tie;
-  });
+  (player1, player2) => getPeopleDuelResult(player1, player2));
 
 export const selectDataForPeopleDuelHistoryRecord = createSelector(
   selectPeopleDuelPlayerOnePick, selectPeopleDuelPlayerTwoPick, selectCharacterDuelResults,
